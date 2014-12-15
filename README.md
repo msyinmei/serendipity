@@ -1,0 +1,1 @@
+ I plan to create Serendipity using AngularJS and Javascript on the front-end and Ruby on Rails on the back-end. In order to incoporate locations and friends of users, I will work with the Google Places API and the Facebook SDK. Eventually, I'd like to add vendors and hopefully use Stripe for that purpose.
