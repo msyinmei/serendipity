@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  root 'events#index'
+  root 'welcome#index'
   resources :users do
     resources :events
   end
