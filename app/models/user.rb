@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
   has_many :events
-  # has_many :attendances
-  # has_many :accepted, :through => :attendances, :source => :events
+  has_many :invites
+  has_many :accepted, :through => :invites, :source => :event
 end
-
-# user = User.find_by_name("yin")
-# user.events;
