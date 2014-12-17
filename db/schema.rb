@@ -16,20 +16,13 @@ ActiveRecord::Schema.define(version: 20141216000416) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attendances", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "events", force: true do |t|
-    t.string   "name"
-    t.datetime "datetime"
+    t.string   "eventname"
+    t.datetime "eventdatetime"
     t.string   "eventlat"
     t.string   "eventlng"
     t.string   "eventplace"
-    t.text     "about"
+    t.text     "eventabout"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -47,11 +40,8 @@ ActiveRecord::Schema.define(version: 20141216000416) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "fbid"
-    t.string   "currentlat"
-    t.string   "currentlng"
-    t.string   "currentplace"
-    t.integer  "friend_id"
+    t.string   "password"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

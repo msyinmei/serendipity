@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'welcome#login'
+  get 'login', to: "welcome#login", as: 'login'
+
+  get 'signup', to: "welcome#signup", as: 'signup'
+
+  post 'login', to: "welcome#attempt_login"
+
+  post 'signup', to: "welcome#create"
+
+  get 'index', to: "welcome#index", as: 'index'
+
+  get 'logout', to: "welcome#logout"
+
   resources :users do
     resources :events
   end
