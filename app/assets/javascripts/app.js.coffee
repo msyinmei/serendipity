@@ -16,36 +16,28 @@ app.directive "formattedAddress", ->
 
 app.directive "viewTabs", ->
   restrict: "E"
-  replace:true
-  template: '<section><ul class="nav nav-pills"><li ng-class="{ active:tab.isSet(1) }"><a href ng-click="tab.setTab(1)">Description</a></li><li ng-class="{ active:tab.isSet(2) }"><a href ng-click="tab.setTab(2)">Specs</a></li><li ng-class="{ active:tab.isSet(3) }"><a href ng-click="tab.setTab(3)">Reviews</a></li></ul><events-all ng-show="tab.isSet(1)"></events-all><events-user ng-show="tab.isSet(2)"></events-user><event-new ng-show="tab.isSet(3)"></event-new></section>'
+  templateUrl: '/templates/view-tabs.html'
   controller: ->
     this.tab = 1
 
     this.isSet = (checkTab) ->
+      # console.log "isSet:" + checkTab
       this.tab == checkTab
 
     this.setTab = (activeTab)->
+      # console.log "isTab:" + activeTab
       this.tab = activeTab
   controllerAs: "tab"
 
 app.directive "eventsAll", ->
-  restrict: 'E',
+  restrict: 'E'
   templateUrl: "/templates/events-all.html"
 
 app.directive "eventsUser", ->
-  restrict: 'E',
+  restrict: 'E'
   templateUrl: "/templates/events-user.html"
 
 app.directive "eventNew", ->
-  restrict: 'E',
+  restrict: 'E'
   templateUrl: "/templates/event-new.html"
-
-# app.directive "eventsAll", ->
-#   restrict: "E",
-#   templateUrl: "events-All.html",
-#   controller: ->
-#     this.current = 0
-#     this.setCurrent = (imageNumber)->
-#       this.current = imageNumber || 0
-#   controllerAs: "eventsAll"
 
