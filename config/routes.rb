@@ -11,11 +11,12 @@ Rails.application.routes.draw do
 
   get 'logout', to: "welcome#logout"
 
-  resources :users do
+  scope 'api' do
+    # resources :users do
+    #   resources :events
+    # end
     resources :events
   end
-  resources :events
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

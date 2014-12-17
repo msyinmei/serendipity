@@ -3,6 +3,11 @@
 This is the index page
 {{44.55 | currency}}
 
+<br>
+
+ <% @event.each do |e| %>
+ <%= e.eventname %> <br>
+ <% end %>
 
 <div>
   Here are my tabs:

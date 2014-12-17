@@ -1,18 +1,11 @@
 app = angular.module 'serendipitousApp', ['rails']
 
-# app.controller('StoreController', ['$http', function($http){
-#     var store = this;
-#     store.products = [];
-#     $http.get('/store-products.json').success(function(data){
-#       store.products = data;
-#     });
-#   }]);
-
-app.directive "formattedAddress", ->
-  restrict: "E"
-  replace: true
-  template: "<h1>hi!</h1>"
-
+app.controller 'AllController', ['$http', ($http)->
+    all = this
+    all.events = []
+    $http.get('/api/events.json').success (data) ->
+      all.events = data
+    ]
 
 app.directive "viewTabs", ->
   restrict: "E"

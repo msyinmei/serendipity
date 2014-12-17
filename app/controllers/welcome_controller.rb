@@ -1,7 +1,9 @@
 class WelcomeController < ApplicationController
   before_action :confirm_logged_in, only: [:index]
   before_action :prevent_login_signup, only: [:signup, :login]
- skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
+
+  respond_to :json, :html
 
   def signup
     @user = User.new
@@ -12,6 +14,8 @@ class WelcomeController < ApplicationController
   end
 
   def index
+    @event = Event.all
+    respond_with @event
   end
 
   def create
