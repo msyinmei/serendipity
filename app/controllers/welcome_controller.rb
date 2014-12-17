@@ -7,14 +7,22 @@ class WelcomeController < ApplicationController
     @user = User.new
   end
 
+  def login
+    @user = User.new
+  end
+
+  def index
+  end
+
   def create
     @user = User.create(user_params)
     if @user.save
+      #Usermailer
       session[:user_id] = @user.id
       flash[:success] = "You are now logged in!"
       redirect_to index_path
     else
-      render login_path
+      render :login
     end
   end
 
@@ -49,6 +57,8 @@ class WelcomeController < ApplicationController
     redirect_to login_path
   end
 
+
+
   private
   def user_params
     params.require(:user).permit(:user, :password, :password_digest)
@@ -65,11 +75,4 @@ class WelcomeController < ApplicationController
       redirect_to index_path
     end
   end
-
-  def login
-  end
-
-  def index
-  end
-
 end

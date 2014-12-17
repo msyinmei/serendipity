@@ -1,0 +1,35 @@
+<!-- Login Modal -->
+<li><a href="#" data-toggle="modal" data-target=".login-modal">Login</a></li>
+
+<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="myModalLabel">Log in</h3>
+      </div>
+
+      <div class="modal-body">
+        <form action="/login" method = "post">
+          <p>
+            <label for="user">Username:</label><br>
+            <input type="text" name="name" id="user" autofocus>
+          </p>
+          <p>
+            <label for="pass">Password:</label><br>
+            <input type="password" name="password" id="pass">
+          </p>
+          <p>
+            <input type="submit" value="Log In" class ="btn ">
+          </p>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        New user?
+        <a data-dismiss="modal" data-toggle="modal" data-target=".login-modal">Register here</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#login'
+
   get 'login', to: "welcome#login", as: 'login'
 
-  get 'signup', to: "welcome#signup", as: 'signup'
+  post 'index', to: "welcome#create", as: 'signup'
 
   post 'login', to: "welcome#attempt_login"
-
-  post 'signup', to: "welcome#create"
 
   get 'index', to: "welcome#index", as: 'index'
 
