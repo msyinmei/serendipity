@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'login', to: "welcome#login", as: 'login'
 
-  post 'index', to: "welcome#create", as: 'signup'
+  post 'signup', to: "welcome#create", as: 'signup'
 
   post 'login', to: "welcome#attempt_login"
 
