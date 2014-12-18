@@ -32,15 +32,15 @@ class WelcomeController < ApplicationController
 
   def attempt_login
 
-    if params[:name].present? && params[:password].present?
-      found_user = User.where(name: params[:name]).first
+    if params[:email].present? && params[:password].present?
+      found_user = User.where(email: params[:email]).first
       if found_user
         authorized_user = found_user.authenticate(params[:password])
       end
     end
 
     if !found_user
-      flash.now[:alert] = "Invalid name"
+      flash.now[:alert] = "Invalid email"
       render :login
 
     elsif !authorized_user
@@ -65,7 +65,7 @@ class WelcomeController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:user, :password, :password_digest)
+    params.require(:user).permit(:email, :password, :password_digest)
   end
 
   def confirm_logged_in

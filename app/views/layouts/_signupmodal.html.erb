@@ -11,19 +11,27 @@
     <div class="modal-body">
       <%= form_for(@user, url: signup_path) do |f|%>
         <p>
-          <%= f.label(:name) %> <br>
-          <%= f.text_field(:name, autofocus: true) %> <br>
-          <span>*please ensure username is 6-30 characters long</span>
+          <%= f.label(:fname) %> <br>
+          <%= f.text_field(:fname, autofocus: true) %> <br>
         </p>
         <p>
-          <%= f.label(:password) %> <br>
-          <%= f.text_field(:password)%><br>
-          <span>*please ensure password is 6-30 characters long</span>
+          <%= f.label(:lname) %> <br>
+          <%= f.text_field(:lname) %> <br>
         </p>
         <p>
           <%= f.label(:email)%> <br>
-          <%= f.text_field(:email)%><br>
+          <%= f.email_field(:email)%><br>
           <span>*please ensure your email contains @ symbol</span>
+        </p>
+        <p>
+          <%= f.label(:password) %> <br>
+          <%= f.password_field(:password)%><br>
+          <span>*please ensure password is 6-30 characters long</span>
+        </p>
+        <p>
+          <%= f.label(:password_confirmation) %> <br>
+          <%= f.password_field(:password_confirmation)%><br>
+          <span>*please ensure password is 6-30 characters long</span>
         </p>
         <p>
           <%= f.submit("Register", class: "btn" )%>

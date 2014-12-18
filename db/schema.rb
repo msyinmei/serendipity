@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 20141216000416) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
+    t.string   "fname"
+    t.string   "lname"
     t.string   "email"
     t.string   "password"
     t.string   "password_digest"
+    t.string   "profpic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

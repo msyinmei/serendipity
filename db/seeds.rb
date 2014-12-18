@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-  User.create(name: 'msyinmei', password: 'msyinmei', email: 'ms.yinmei@gmail.com')
+  User.create(fname: 'Yin', lname: 'Mei', password: 'msyinmei', email: 'ms.yinmei@gmail.com')
   Event.create(eventname: 'West Coast Party', eventdatetime: '2014-12-18 5:00:00 -0800', eventlat: '37.790877', eventlng: '-122.401645', eventabout: 'about this event', user_id: 1)
