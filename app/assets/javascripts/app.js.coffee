@@ -11,7 +11,7 @@ app.directive "viewTabs", ->
   restrict: "E"
   templateUrl: '/templates/view-tabs.html'
   controller: ->
-    this.tab = 1
+    this.tab = 3
 
     this.isSet = (checkTab) ->
       # console.log "isSet:" + checkTab
@@ -21,6 +21,10 @@ app.directive "viewTabs", ->
       # console.log "isTab:" + activeTab
       this.tab = activeTab
   controllerAs: "tab"
+
+app.directive "mapDiv", ->
+  restrict: "E"
+  templateUrl: '/templates/map-div.html'
 
 app.directive "eventsAll", ->
   restrict: 'E'

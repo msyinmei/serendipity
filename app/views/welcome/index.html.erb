@@ -1,16 +1,8 @@
 <%= render "layouts/navbarmain", locals: {user: @user} %>
 
-This is the index page
-{{44.55 | currency}}
-
-<br>
-
- <% @event.each do |e| %>
- <%= e.eventname %> <br>
- <% end %>
+    <div id="map-canvas" style="width: 100%; height: 50%"></div>
 
 <div>
-  Here are my tabs:
   <!-- View Tabs  -->
   <view-tabs></view-tabs>
 </div>

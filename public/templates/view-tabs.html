@@ -1,5 +1,10 @@
 <!-- Tabs Go Here -->
+<div class="container">
+<!-- Map -->
+<map-div></map-div>
+
 <section>
+<!-- Tabs -->
   <ul class="nav nav-pills">
     <li ng-class="{ active:tab.isSet(1) }">
       <a href ng-click="tab.setTab(1)">All Events</a>
@@ -12,13 +17,16 @@
     </li>
   </ul>
 
-  <!--  Description Tab's Content  -->
+  <!--  All Events Content  -->
+  <div class="view-div">
   <events-all ng-show="tab.isSet(1)"></events-all>
 
-  <!--  Spec Tab's Content  -->
+  <!--  Users's Events Only (Attending and Hosting) Content  -->
   <events-user ng-show="tab.isSet(2)"></events-user>
 
-  <!--  Review Tab's Content  -->
+  <!--  Creat New Event -->
   <event-new ng-show="tab.isSet(3)"></event-new>
+  </div>
 
 </section>
+</div>
