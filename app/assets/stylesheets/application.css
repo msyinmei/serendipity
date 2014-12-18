@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
  html, body {
   height:100%;
  }
@@ -23,6 +26,8 @@
         padding: 0px
       }
 
-.view-div{
+.view-div {
   overflow-y: auto;
+  height: 30%;
+  max-height: 300px;
 }

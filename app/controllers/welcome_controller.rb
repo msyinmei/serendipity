@@ -14,8 +14,7 @@ class WelcomeController < ApplicationController
   end
 
   def index
-    @event = Event.all
-    respond_with @event
+    @user = User.find(session[:user_id])
   end
 
   def create

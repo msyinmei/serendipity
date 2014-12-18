@@ -1,3 +1,9 @@
-<div ng-show="tab.isSet(2)">
-  <h4>My Events</h4>
+<div ng-controller="MyeventsController as all" ng-show="tab.isSet(2)">
+  <h4>My Events Test</h4>
+      <!--  Product Container  -->
+      <div ng-repeat="event in all.myevents">
+        <h3>{{event.eventname}}</h3>
+        <p>{{event.eventdatetime}}</p>
+        <p>{{event.eventabout}}</p>
+      </div>
 </div>

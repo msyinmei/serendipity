@@ -1,5 +1,19 @@
 app = angular.module 'serendipitousApp', ['rails']
 
+# run if a caching issue happens during development
+# app.run ($rootScope, $templateCache) ->
+#   $rootScope.$on "$routeChangeStart", (event, next, current) ->
+#     $templateCache.remove current.templateUrl  if typeof (current) isnt "undefined"
+#     return
+#   return
+
+# app.controller 'MyeventsController', ['$http', ($http)->
+#   all = this
+#   all.myevents = []
+#   $http.get('/api/events/' + session[:user_id] + '.json').success(data) ->
+#     all.myevents = data
+# ]
+
 app.controller 'AllController', ['$http', ($http)->
     all = this
     all.events = []
